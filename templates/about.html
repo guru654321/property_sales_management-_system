@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Real Estate Management System</title>
+    <style media="screen">
+    /* style.css */
+
+.aboutbody {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+  transition: margin 0.3s ease-in-out;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.about-heading {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.c1,
+.c2 {
+  margin-bottom: 20px;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+.description {
+  text-align: justify;
+}
+
+
+
+    </style>
+</head>
+
+<body class="aboutbody">
+    {% include 'navbar.html' %}
+    <div class="main-container">
+        <h2 id="about-section" class="about-heading text-center">About Us</h2>
+        <div class="content-row">
+            <div class="image-container col-md-6 col-lg-4 c1">
+                <img src="{% static 'images/guru5.jpg' %}" alt="" class="img-fluid bordered-image" onclick="showImageDescription(this)">
+            </div>
+            <div class="description-container col-md-6 col-lg-8 c2">
+                <p class="description">Welcome to Real Estate Management System (REMS), your comprehensive solution for managing real estate activities. REMS streamlines the entire process, from property management to real estate agency operations, ensuring efficiency and informed decision-making.</p>
+                <p class="description">Imagine a commercial property, CP789, situated at 456 Business Avenue, Metropolis City. This 5,000 sq. ft. office space, listed by Agent Sarah Johnson, boasts open workspaces and conference rooms. XYZ Corporation is the buyer, and Commercial Real Estate Holdings LLC is the seller. The property, sold for $1,150,000 in installments over 12 months, reflects our commitment to facilitating smooth transactions.</p>
+                <p class="description">Agent Sarah Johnson, recognized for expertise in commercial real estate, earned a 2.5% commission. Our platform ensures seamless user experiences, with an admin interface, user accounts for buyers and sellers, and transparent communication records. Analytics and reports provide insights into sales trends, financial analyses, and key performance metrics.</p>
+                <p class="description">Join us in managing property tours and key dates efficiently. From negotiation emails to notifications, REMS keeps you informed. Experience a user-friendly calendar and scheduling system that handles property tours, closing dates, and payment schedules.</p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

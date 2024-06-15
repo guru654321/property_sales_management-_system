@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Property Sale Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .content-container {
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: inline-block;
+        }
+        .hh1 {
+            padding: 10px;
+            color: #20B2AA;
+            margin-top: 20px;
+        }
+        #image-container {
+            text-align: center;
+        }
+        .bordered-image {
+            border: 2px solid black;
+            margin: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            margin-top: 20px;
+        }
+        .bordered-image:hover {
+            transform: scale(1.1);
+        }
+        .desc {
+            color: #800000;
+        }
+        .c1 {
+            margin-top: 50px;
+        }
+        .c2 {
+            margin-top: 100px;
+        }
+        .description {
+            color: black;
+            font-family: 'Arial', sans-serif;
+        }
+        .ab1 {
+            margin-bottom: -50px;
+        }
+        .navbar-link {
+            cursor: pointer;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .navbar-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-3 col-md-7 text-center ">
+            <h3 class="hh1">Welcome to Property Sale Management System</h3>
+            <!-- Add About button in the header -->
+            <a href="#about-section" class="btn btn-primary navbar-link">About</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="c1">
+                <img src="{% static 'images/guru1.jpg' %}" alt="" width="80%" height="80%" class="bordered-image" onclick="showImageDescription(this)">
+                <h4 class="desc">Description</h4>
+                <p class="description">Explore the elegance of this charming property. The spacious living room invites abundant natural light, creating a warm and inviting atmosphere. The cozy bedroom provides a breathtaking view of the vibrant garden.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="c1">
+                <img src="{% static 'images/guru2.webp'%}" alt="" width="80%" height="80%" class="bordered-image" onclick="showImageDescription(this)">
+                <h4 class="desc">Description</h4>
+                <p class="description">Step into modern luxury! The kitchen boasts stainless steel appliances and granite countertops. The open floor plan seamlessly connects the kitchen to the dining area, creating the perfect space for entertaining guests.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="c1">
+                <img src="{% static 'images/guru3.jpeg'%}" alt="" width="80%" height="80%" class="bordered-image" onclick="showImageDescription(this)">
+                <h4 class="desc">Description</h4>
+                <p class="description">Escape to paradise! This property features a beautiful backyard with a spacious patio, ideal for hosting outdoor gatherings. Immerse yourself in the tranquil surroundings of the lush greenery and well-maintained garden.</p>
+            </div>
+        </div>
+    </div>
+    <h2 id="about-section" class="about-heading ab1">About</h2>
+    <div class="row">
+        <div class="col-md-4 c1">
+            <img src="{% static 'images/guru5.jpg'%}" alt="" width="80%" height="80%" class="bordered-image" onclick="showImageDescription(this)">
+        </div>
+        <div class="col-md-8 c2">
+            <p class="description">Real Estate Management System (REMS) is an online real estate software application that manages the overall operational activities and processes, starting from the management of the property, to the management of real estate agencies, agents, clients and financial transactions. It provides comprehensive reports for managing the Real Estate agency performance and efficiency, and enables the management for better decision-making.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

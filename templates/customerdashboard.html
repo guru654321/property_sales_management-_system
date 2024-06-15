@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+        .dashbody {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-col {
+            flex: 1 0 25%;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .dashboard-rectangle-container {
+            text-align: center;
+        }
+
+        .dashboard-rectangle {
+            width: 100%;
+            padding-top: 60%;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dashboard-circle {
+            width: 80%;
+            padding-top: 40%;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+        }
+
+        .dashboard-text {
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dashboard-text a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            .dashboard-col {
+                flex: 1 0 33.33%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-col {
+                flex: 1 0 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .dashboard-col {
+                flex: 1 0 100%;
+            }
+        }
+
+        /* Footer styles */
+        .custom-footer {
+            font-family: 'Merriweather', serif;
+            background-color: #106e69;
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .footer-head {
+            color: #351F39;
+        }
+
+        .footer-p {
+            color: white;
+        }
+
+        .footer-a {
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 0 25%;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+        .footer-social ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-social li {
+            margin-right: 10px;
+        }
+
+        /* Media Queries for Footer */
+        @media (max-width: 767px) {
+            .footer-column {
+                flex: 1 0 100%;
+            }
+        }
+    </style>
+
+    <title>Customer Dashboard</title>
+</head>
+
+<body class="dashbody">
+    {% include 'customernavbar.html'%}
+    <div class="dashboard-container">
+        <div class="dashboard-row">
+            <div class="dashboard-col">
+                <div class="dashboard-rectangle-container">
+                    <div class="dashboard-rectangle">
+                        <div class="dashboard-circle">
+                            <p class="dashboard-text"><a href="#">My Enquiry</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-col">
+                <div class="dashboard-rectangle-container">
+                    <div class="dashboard-rectangle">
+                        <div class="dashboard-circle">
+                            <p class="dashboard-text"><a href="#">My Account</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-col">
+                <div class="dashboard-rectangle-container">
+                    <div class="dashboard-rectangle">
+                        <div class="dashboard-circle">
+                            <p class="dashboard-text"><a href="#">Change Password</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-col">
+                <div class="dashboard-rectangle-container">
+                    <div class="dashboard-rectangle">
+                        <div class="dashboard-circle">
+                            <p class="dashboard-text"><a href="#">Logout</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html'%}
+</body>
+
+</html>

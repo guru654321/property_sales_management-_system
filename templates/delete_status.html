@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head content goes here -->
+</head>
+
+<body>
+    <h1>Delete Type</h1>
+    <p>Are you sure you want to delete "{{ status_data.Status_name }}"?</p>
+    <form method="post" action="{% url 'delete_status' id=status_data.id %}">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+    </form>
+</body>
+
+</html>

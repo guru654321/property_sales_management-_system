@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Report</title>
+    <!-- Add your styles and imports here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="displaybody">
+    <!-- Navbar (Assuming it's included in 'navbarafterlogin.html') -->
+    {% include 'navbarafterlogin.html' %}
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Type Report</h2>
+
+        {% if reporttype %}
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Type Name</th>
+                        <th>Type Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in reporttype %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.add_type_name }}</td>
+                            <td>{{ i.add_type_description }}</td>
+                            <td>
+                                <a href="{% url 'edit_type' id=i.id %}" class="btn btn-outline-success">Edit</a>
+                                <button class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal{{ i.id }}">Delete</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="text-center">No data available for the current user.</p>
+        {% endif %}
+
+        <!-- Modals -->
+        {% for i in reporttype %}
+            <div class="modal fade" id="deleteModal{{ i.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete "{{ i.add_type_name }}"?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- Button to confirm delete -->
+                            <form method="post" action="{% url 'delete_type' id=i.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                            </form>
+                            <!-- Button to close the modal -->
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+  
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>
